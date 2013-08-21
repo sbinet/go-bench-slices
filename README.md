@@ -25,7 +25,7 @@ go test -compiler=gccgo -gccgoflags="-O3" -bench=.
 testing: warning: no tests to run
 PASS
 BenchmarkSlice	       1	13201407000 ns/op
-BenchmarkArray	       1	7777616000 ns/op
+BenchmarkArray	       1	 7777616000 ns/op
 ok  	github.com/sbinet/go-bench-slices	20.996s
 time ./run-gccgo
 13.22544s
