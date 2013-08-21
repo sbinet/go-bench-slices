@@ -37,9 +37,9 @@ int main() {
     long num = operation();
     double time_span = (duration_cast<duration<double>>(Clock::now() - t1)).count();
     total_time += time_span;
-    std::cout << "Time taken for operation " << i << " : " << time_span << " seconds." << std::endl;
-    std::cout << "Result is " << num << std::endl;
+    std::cout << time_span << "s\n"
+              << num << std::endl;
   }
-  std::cout << "\nAverage time: " << (total_time/kRunTime) << "seconds." << std::endl;
+
   return 0;
 }
