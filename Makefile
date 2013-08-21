@@ -9,11 +9,13 @@ export GOPATH=${PWD}
 go: slices.go
 	@echo ""
 	go build -compiler=gc -o run-gcgo slices.go
+	go test -compiler=gc -bench=.
 	time ./run-gcgo
 
 gccgo: slices.go
 	@echo ""
 	go build -compiler=gccgo -gccgoflags="-O3" -o run-gccgo slices.go
+	go test -compiler=gccgo -gccgoflags="-O3" -bench=.
 	time ./run-gccgo
 
 gxx: slices.cxx

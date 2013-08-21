@@ -5,9 +5,11 @@ import (
 	"time"
 )
 
+const sz = 100000
+const expected = 1486628700509663744
+
 func main() {
 
-	const sz = 100000
 	sl1 := make([]int32, sz)
 	sl2 := make([]int32, sz)
 
