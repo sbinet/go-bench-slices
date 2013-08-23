@@ -3,7 +3,7 @@
 all: clean go goasm gccgo gxx clangxx
 	@echo ""
 
-
+CXXFLAGS := -O3 -march=native
 export GOPATH=${PWD}
 
 go: slices.go
@@ -20,12 +20,12 @@ gccgo: slices.go
 
 gxx: slices.cxx
 	@echo ""
-	g++ -std=c++11 -o run-gxx -O3 slices.cxx
+	g++ -std=c++11 -o run-gxx $(CXXFLAGS) slices.cxx
 	time ./run-gxx
 
 clangxx: slices.cxx
 	@echo ""
-	clang++ -std=c++11 -o run-clangxx -O3 slices.cxx
+	clang++ -std=c++11 -o run-clangxx $(CXXFLAGS) slices.cxx
 	time ./run-clangxx
 
 clean:
